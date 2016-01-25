@@ -7,12 +7,14 @@ table
       th
       th
       th
+      th
 
   tbody
     - @applications.each do |application|
       tr
         td = application.name
         td = link_to 'Show', application
+        td = link_to 'JSON', application_path(application, format: :json), target: "_blank"
         td = link_to 'Edit', edit_application_path(application)
         td = link_to 'Destroy', application, data: {:confirm => 'Are you sure?'}, :method => :delete
 
