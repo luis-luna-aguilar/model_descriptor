@@ -1,0 +1,32 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @model.name
+p
+  strong Application:
+  = @model.application.name
+p
+  strong Actions:
+  = @model.actions.map(&:name).join(", ")
+p
+  strong Fields
+  ul
+    - @model.fields.each do |field|
+      li
+        p
+          label Name
+          = field.name
+        p
+          label Type
+          = field.attr_type
+        p
+          label Default Value
+          = field.default
+        p
+          label Required?
+          = field.required.to_s
+
+= link_to 'Edit', edit_model_path(@model)
+'|
+= link_to 'Back', models_path

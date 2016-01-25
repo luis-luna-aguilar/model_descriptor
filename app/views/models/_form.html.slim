@@ -1,0 +1,16 @@
+= simple_form_for(@model) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.association :application, collection: Application.all, value_method: :id, label_method: :name, include_blank: false
+    = f.input :action_ids, as: :check_boxes, label: "Actions", collection: Action.all, value_method: :id, label_method: :name
+
+    h3 Fields
+    = f.simple_fields_for :fields do |field|
+      = render 'field_fields', f: field
+    .links
+      = link_to_add_association 'add field', f, :fields
+
+  .form-actions
+    = f.button :submit

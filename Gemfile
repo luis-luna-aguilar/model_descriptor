@@ -13,10 +13,11 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 5.5'
 gem 'pg'
 gem 'simple_form'
 gem 'slim-rails'
+gem 'cocoon'
 group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.0.1'
