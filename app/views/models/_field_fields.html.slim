@@ -3,4 +3,5 @@
   = f.input :attr_type, as: :select, collection: Field.attr_types.keys, include_blank: false, selected: Field.attr_types.keys[f.object[:attr_type].to_i]
   = f.input :default
   = f.input :required
+  = f.input :editable_by_user
   br

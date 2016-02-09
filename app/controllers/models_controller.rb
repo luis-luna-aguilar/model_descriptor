@@ -69,7 +69,10 @@ class ModelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def model_params
-      params.require(:model).permit(:name, :application_id, fields_attributes: [:id, :name, :attr_type, :default, :required], action_ids: [])
+      params.require(:model).permit(:name, :application_id,
+        fields_attributes: [:id, :name, :attr_type, :default, :required, :editable_by_user],
+        action_ids: []
+      )
     end
 
 end
