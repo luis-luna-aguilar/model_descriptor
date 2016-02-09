@@ -1,3 +1,6 @@
+json.has_devise @application.has_devise
+json.has_api @application.has_api
+
 json.models @application.models do |model|
 
   json.name model.name
