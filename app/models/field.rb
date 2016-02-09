@@ -3,6 +3,8 @@ class Field < ActiveRecord::Base
   belongs_to :model
   enum attr_type: [:reference, :string, :text, :integer, :float, :decimal, :datetime, :timestamp, :time, :date, :binary, :boolean]
 
+  validates_presence_of :attr_type, :name
+
 end
 
 # == Schema Information

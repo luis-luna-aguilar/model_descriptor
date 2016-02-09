@@ -1,6 +1,16 @@
 = simple_form_for(@model) do |f|
   = f.error_notification
 
+  p
+    h4 Reglas
+    | 1. Utilice solamente las acciones de controlador necesarias. Si es un modelo headless, ninguna.
+    br
+    | 2. Las referencias no son del tipo model_id:references, sino model:references. No le ponga el _id.
+    br
+    | 3. Por ahora no estoy procesando default, required o editable. No se moleste en ponerlo.
+
+  br
+
   .form-inputs
     = f.input :name
     = f.association :application, collection: Application.all, value_method: :id, label_method: :name, include_blank: false

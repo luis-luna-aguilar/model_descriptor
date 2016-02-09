@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209054828) do
+ActiveRecord::Schema.define(version: 20160209170604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,8 +44,9 @@ ActiveRecord::Schema.define(version: 20160209054828) do
     t.string   "default"
     t.boolean  "required"
     t.integer  "model_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "editable_by_user", default: true
   end
 
   add_index "fields", ["model_id"], name: "index_fields_on_model_id", using: :btree
