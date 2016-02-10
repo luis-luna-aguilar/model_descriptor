@@ -3,7 +3,7 @@ class Field < ActiveRecord::Base
   belongs_to :model
 
   enum attr_type: [
-    :references, :string, :text, :integer, :float, :decimal,
+    :reference, :string, :text, :integer, :float, :decimal,
     :datetime, :timestamp, :time, :date, :binary, :boolean
   ]
 
